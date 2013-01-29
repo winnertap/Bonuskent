@@ -1,0 +1,243 @@
+// Responsive
+.row-fluid.fluid {
+   float:left;
+   width:100%;
+}
+@media(max-width:1225px) {
+  .top_bar_stats {
+    .stats:nth-child(3) {
+      display:none;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width:100%;
+  }
+}
+@media(max-width:1025px) {
+  .to_hide_tablet {
+    display:none !important;    
+  }
+  .row-fluid.fluid  {
+      width:100%;
+      float:none;
+  }
+  .form-horizontal .control-label {
+    text-align:left;
+    margin-bottom:0;
+  }
+      // Fixed grid
+
+  // Fluid grid
+  @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+
+  // Input grid
+  @include grid-input($gridColumnWidth768, $gridGutterWidth768);
+    // Fluid grid
+  // @include grid-fluid($fluidGridColumnWidth768, $fluidGridGutterWidth768);
+
+  .row-fluid.fluid .span4 {
+    // width:30%;
+  }
+  .row-fluid:not(.fluid) > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .container {
+    width:100%;
+  }
+ 
+  .to_hide {
+    display:none !important;
+    
+  }
+  .row-fluid ul.general_statistics li {
+      // float:left;
+      // width:100% !important;
+  }
+  ul.general_statistics .heading {
+    font-size:26px;
+  }
+  .row-fluid:not(.fluid) > [class*="span"] {
+    float: none;
+    display: block;
+    width: auto;
+    margin-left: 0;
+  }
+}
+@media (max-width: 769px) {
+    // Padding to set content in a bit
+  body {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top:0;
+    background:url(../img/patterns/bg_dark3.png);
+  }
+  #main .top_right ul.responsive, #responsive_part {
+    display:block;
+  }
+ #sidebar .logo {
+    display:none;
+  }
+  #header {
+    padding:10px 0;
+  }
+  .breadcrumbs {
+    display:none !important;
+  }
+  .row-fluid .to_hide {
+    display:none !important;
+    
+  }
+  .to_hide_phone {
+    display:none !important;
+    
+  }
+  #sidebar {
+    width:100%;
+    padding:0 ;
+    margin:0;
+    overflow:hidden;
+    height:0;
+    &.collapse.in {
+      overflow:visible;
+    }
+    ul#sidebar_menu {
+      & {
+        margin:0 0 20px 0;
+      }
+      li {
+        @include border-radius(0);
+        border:none;
+        a {
+          &:hover {
+
+          }
+        }
+      }
+    }
+  }
+  #main {
+    padding:0;
+    float:left;
+  }
+}
+@media (max-width:600px) {
+  //Specific pages
+  #loading {
+    & {
+      position:static;
+      left:auto;
+      width:100%;
+      overflow:visible;
+    }
+    & > div {
+            top:15px;
+    }
+    #login {
+      height:auto;
+    }
+    .other_pages {
+      width:100%;
+      position:relative;
+       text-align:center;
+    }
+    .row-fluid > [class*="span"] {
+      float: left;
+      display: block;
+      width: 100%;
+      margin-left: 0;
+    }
+  } 
+}
+@media (max-width: 480px) {
+    body {
+    padding:0;
+  }
+  #responsive_part {
+    padding-right:10px;
+  }
+  #header {
+    padding:15px 10px;
+  }
+  #main .top_right ul.nav_menu {
+    display:none;
+  }
+  #main .container_top {
+    .top_right, ul.search, ul.search li {
+      width:100%; 
+    }
+    .top_right {
+      padding:7px 10px;
+      margin:0;
+    }
+    ul.search {
+      margin:0;
+      padding:0px;
+      li {
+        margin:0;
+      }
+    }
+    form .input-append {
+      padding:2px 3px;
+    }
+    form .input-append input.search-query {
+      &, &:focus {
+        width:100%;
+        margin:0;
+      }
+    }
+  }
+
+  .to_hide_phone {
+    display:none !important; 
+  }
+}
+
+
+
+// Mixing.scss
+
+// @mixin grid-fluid($fluidGridColumnWidth, $fluidGridGutterWidth) {
+//   .row-fluid:not(.fluid) {
+//     width: 100%;
+
+//     @include clearfix();
+//     & > [class*="span"] {
+//       @include input-block-level();
+//       float: left;
+//       margin-left: $fluidGridGutterWidth;
+//       *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+//     }
+//     & > [class*="span"]:first-child {
+//       margin-left: 0;
+//     }
+
+//     // generate .spanX and .offsetX
+//     @include grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+//     @include grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+//   }
+//   .row-fluid {
+
+   
+//     @include clearfix();
+//     & > [class*="span"] {
+//       @include input-block-level();
+//       float: left;
+//       margin-left: $fluidGridGutterWidth;
+//       *margin-left: $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+//     }
+//     & > [class*="span"]:first-child {
+//       margin-left: 0;
+//     }
+
+//     // generate .spanX and .offsetX
+//     @include grid-fluid-span-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+//     @include grid-fluid-offset-x($gridColumns, $fluidGridColumnWidth, $fluidGridGutterWidth);
+//   }
+// }
